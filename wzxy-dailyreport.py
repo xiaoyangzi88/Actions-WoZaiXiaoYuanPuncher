@@ -131,7 +131,7 @@ class WoZaiXiaoYuanPuncher:
         self.header['Content-Type'] = "application/x-www-form-urlencoded"
         self.header['JWSESSION'] = self.getJwsession()
         sign_data = {
-            "answers": '["0"]',
+            "answers": '["0","无","无","无","无","无","0","0"]',
             "seq": str(seq),
             "temperature": utils.getRandomTemperature(os.environ['WZXY_TEMPERATURE']),
             "latitude": os.environ['WZXY_LATITUDE'],
@@ -204,7 +204,7 @@ class WoZaiXiaoYuanPuncher:
             print("消息经Serverchan-Turbo推送成功")
         if os.environ.get('PUSHPLUS_TOKEN'):
             # pushplus 推送
-            url = 'http://www.pushplus.plus/send'
+            url = 'http://pushplus.hxtrip.com/send'
             notifyToken = os.environ['PUSHPLUS_TOKEN']
             content = json.dumps({
                 "打卡项目": "日检日报",
